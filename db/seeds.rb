@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'nokogiri'
+require 'roo'
+require 'open-uri'
+
+# Open the xlsx
+@listings_path = './app/assets/org_dev_stash.xlsx'
+@excel = Roo::Spreadsheet.open(@listings_path)
+@resource_list = @excel.sheet('Org Dev Stash Content Map')
+
+@resource_list.each(resource: "Resource ", link:"Link") do |hash|
+  new_resource = Listing.new(web_url: hash[:link])
+  # if hash[:link] != "Link"
+    new_resource_html = Nokogiri::HTML(open(new_resource.web_url))
+    new_resource.name = new_resource_html.search('head title').text
+    new_resource.description = new_resource_html.search('head description').text
+    new_resource.save
+  rescue
+    next
+ # end
+end
+
+
+# Go through each of the rows, headers activated do
+# If the row for url is filled
+## use nokogiri to grab the name of the resource
+## use nokogiri to grab the content description from the web
