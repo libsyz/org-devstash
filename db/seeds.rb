@@ -10,6 +10,11 @@ require 'nokogiri'
 require 'roo'
 require 'open-uri'
 
+
+# TO-DO: Change Roo Gem for Ruby Spreadsheet Gem, would allow
+# write access to the sheet and therefore 'cache' values obtained
+# from scraping - Reseeding would be much faster
+
 # Open the xlsx
 @listings_path = './app/assets/org_dev_stash.xlsx'
 @excel = Roo::Spreadsheet.open(@listings_path)
@@ -17,13 +22,13 @@ require 'open-uri'
 
 @resource_list.each(resource: "Resource ", link:"Link") do |hash|
   new_resource = Listing.new(web_url: hash[:link])
-  # if hash[:link] != "Link"
-    new_resource_html = Nokogiri::HTML(open(new_resource.web_url))
-    new_resource.name = new_resource_html.search('head title').text
-    new_resource.description = new_resource_html.search('head description').text
-    new_resource.save
+  # how can I cache the new resource into the excel?
+  new_resource_html = Nokogiri::HTML(open(new_resource.web_url))
+  new_resource.name = new_resource_html.search('head title').text
+  new_resource.description = new_resource_html.search('head description').text
+  new_resource.save
   rescue
-    next
+  next
  # end
 end
 
