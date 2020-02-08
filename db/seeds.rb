@@ -15,22 +15,30 @@ require 'open-uri'
 # write access to the sheet and therefore 'cache' values obtained
 # from scraping - Reseeding would be much faster
 
-# Open the xlsx
-@listings_path = './app/assets/org_dev_stash.xlsx'
-@excel = Roo::Spreadsheet.open(@listings_path)
-@resource_list = @excel.sheet('Org Dev Stash Content Map')
+# # Open the xlsx
+# @listings_path = './app/assets/org_dev_stash.xlsx'
+# @excel = Roo::Spreadsheet.open(@listings_path)
+# @resource_list = @excel.sheet('Org Dev Stash Content Map')
 
-@resource_list.each(resource: "Resource ", link:"Link") do |hash|
-  new_resource = Listing.new(web_url: hash[:link])
-  # how can I cache the new resource into the excel?
-  new_resource_html = Nokogiri::HTML(open(new_resource.web_url))
-  new_resource.name = new_resource_html.search('head title').text
-  new_resource.description = new_resource_html.search('head description').text
-  new_resource.save
-  rescue
-  next
- # end
+# @resource_list.each(resource: "Resource ", link:"Link") do |hash|
+#   new_resource = Listing.new(web_url: hash[:link])
+#   # how can I cache the new resource into the excel?
+#   new_resource_html = Nokogiri::HTML(open(new_resource.web_url))
+#   new_resource.name = new_resource_html.search('head title').text
+#   new_resource.description = new_resource_html.search('head description').text
+#   new_resource.save
+#   rescue
+#   next
+#  # end
+# end
+
+Listing.all.each do |listing|
+  random_number = [1,2,3].sample
+  listing.categories << Category.all.sample(random_number)
+  listing.save
 end
+
+
 
 
 # Go through each of the rows, headers activated do
