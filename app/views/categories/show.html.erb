@@ -1,0 +1,9 @@
+
+
+<ul class="listings-list">
+  <% @listings.each do |listing| %>
+  <li class="listing">
+    <%= link_to "#{listing.name}", listing.web_url %>
+  </li>
+  <% end %>
+</ul>
