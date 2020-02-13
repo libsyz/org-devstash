@@ -1,0 +1,54 @@
+
+.card-category {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+.card-category img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+
+.card-category h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+}
+
+.card-category-link {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+
+
+.card-category-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #666666;
+}
+
+.card-category p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-category .card-category-infos {
+  color: #000;
+  padding: 16px;
+}
+

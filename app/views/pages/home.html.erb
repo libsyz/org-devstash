@@ -1,18 +1,22 @@
 <div class="container">
-    <div class="logo">
-        ODS.
-    </div>
-    <div class="text">
-        <h1>The Org Dev Stash</h1>
-        <p> A curated directory of resources & tools to build teams, develop people and solve problems collaboratively </p>
-    </div>
+  <div class="logo">
+    ODS.
+  </div>
+  <div class="text">
+    <h1>The Org Dev Stash</h1>
+    <p> A curated directory of resources & tools to build teams, develop people and solve problems collaboratively </p>
+  </div>
+</div>
 
-  <ul class="categories-list">
-    <% @categories.each do |category| %>
-      <li class="category">
-        <%= link_to "#{category.name}", category_path(category) %>
-      </li>
-    <% end %>
-  </ul>
 
+<div class="wrapper-home">
+  <% @categories.each do |category| %>
+  <div class="card-category">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-category-infos">
+      <%= link_to category.name, category_path(category), class: "card-category-link" %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </div>
+  <% end %>
 </div>
