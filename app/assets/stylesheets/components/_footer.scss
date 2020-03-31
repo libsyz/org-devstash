@@ -1,0 +1,19 @@
+
+.footer {
+  padding: 0px 120px;
+  height: 58px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: $footer-background;
+  font-family: 'Roboto';
+}
+
+.footer > a > p {
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  height: 18px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
