@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem "roo", "~> 2.8.0"
 gem "nokogiri"
+gem 'sprockets-rails', '2.3.3'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
