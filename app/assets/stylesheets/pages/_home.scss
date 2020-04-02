@@ -1,9 +1,10 @@
 .container-hero {
   background-image: url('hero-background-blob.svg');
   background-size: cover;
-  background-position: 100% 30%;
+  background-position: 0 30%;
 }
 
 .hero-main {
-  height: 100vh;
+  // 100 vh - navbar component height
+  height: calc(100vh - 58px);
 }
