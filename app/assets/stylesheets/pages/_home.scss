@@ -1,34 +1,9 @@
-// Specific CSS for your home-page
-
-body {
-    background-color: #1B1B1B;
-    color: #fff;
+.container-hero {
+  background-image: url('hero-background-blob.svg');
+  background-size: cover;
+  background-position: 100% 30%;
 }
 
-.container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    font-size: 4rem;
-    font-weight: 600;
-    padding: 10px 10px;
-    max-height: 300px;
-    background-color: #E6CB59;
-    border-radius: 7px;
-    color: #000;
-    margin-right: 30px;
-}
-
-.text > p {
-    font-size: 16px;
-}
-
-
-.wrapper-home {
-  padding: 0px 200px;
+.hero-main {
+  height: 100vh;
 }
