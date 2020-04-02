@@ -1,0 +1,24 @@
+
+.button-section {
+  background: #FFFFFF;
+  box-shadow: 2px 4px 20px rgba(50, 55, 60, 0.11);
+  border-radius: 2px;
+  height: 48px;
+  align-items: center;
+  text-align: center;
+  font-family: 'Roboto';;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: #405979;
+  line-height: 48px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.button-section.active {
+  color: #FFFFFF;
+  background: linear-gradient(12.94deg, #CA4F3B 8.03%, #CC513C 24.85%, #CD523D 44.86%, #D3563C 60.07%, #E05F39 84.89%);
+  box-shadow: 2px 4px 20px rgba(32, 12, 7, 0.2), -2px -4px 20px rgba(32, 12, 7, 0.2);
+  border-radius: 2px;
+}
