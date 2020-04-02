@@ -8,3 +8,20 @@
   // 100 vh - navbar component height
   height: calc(100vh - 58px);
 }
+
+.hero-text {
+  font-family: 'Playfair Display';
+  font-size: 30px;
+  color: $hero-text;
+  margin-top: 100px;
+}
+
+.categories-text {
+  font-family: 'Playfair Display';
+  font-size: 30px;
+  color: $hero-text;
+}
+
+.hero-humans {
+  width: 100%;
+}
